@@ -91,9 +91,7 @@ const Tags = () => {
             "javascript",
             "ruby",
             "ruby on rails",
-            "css",
             "beginners",
-            "html",
             "typescript"
           ]}
         </TagList>
@@ -102,7 +100,7 @@ const Tags = () => {
   );
 };
 
-const Sidebar = (props) => {
+const Sidebar = props => {
   return (
     <Box as="aside" {...props}>
       <Links />
