@@ -45,7 +45,7 @@ const List = () => {
         <ListHeading />
         {[1, 2, 3, 4, 5].map(id => {
           return (
-            <Box borderBottom="1px solid #E2E4E6" width="100%" p="3">
+            <Box borderBottom="1px solid #E2E4E6" width="100%" p="3" key={id}>
               <Skeleton height="15vh" borderRadius="5px" width="100%" />
             </Box>
           );
@@ -56,8 +56,8 @@ const List = () => {
   return (
     <Box as="section" bg="white" borderRadius="md" border="1px solid #E2E4E6">
       <ListHeading />
-      {data.slice(0, 7).map(list => (
-        <ListBox title={list.title} category={list.category} slug={list.slug} />
+      {data.slice(0, 7).map((list, index) => (
+        <ListBox title={list.title} category={list.category} slug={list.slug} key={index} />
       ))}
     </Box>
   );
@@ -99,8 +99,8 @@ const News = () => {
           slug: ""
         },
         { title: "Pair Programming with Jhey", category: "events", slug: "" }
-      ].map(news => (
-        <ListBox title={news.title} category={news.category} slug={news.slug} />
+      ].map((news, index) => (
+        <ListBox title={news.title} category={news.category} slug={news.slug} key={index} />
       ))}
     </Box>
   );
