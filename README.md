@@ -6,13 +6,13 @@
   <h2 align="center">Dev.to Clone</h2>
 
   <p align="center">
-    Built with react & nextjs.
+    Built with React & Next.js.
   </p>  
 </p>
 
 ## Preview
 
-[![Dev.to Homepage][./public/dev.to.png]](#)
+![Homepage](/public/devto.png)
 
 ## Overview
 
