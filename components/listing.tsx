@@ -78,7 +78,7 @@ const List = ({ headingType }) => {
 const Listing = (props) => {
   return (
     <VStack as="aside" spacing="4" {...props}>
-      <List />
+      <List headingType="link" />
       <List headingType="hashtag" />
     </VStack>
   );

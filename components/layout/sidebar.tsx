@@ -64,11 +64,7 @@ const Links = () => {
   );
 };
 
-type TagListProps = {
-  children: ReactNode;
-};
-
-const TagList = ({ children }: TagListProps) => {
+const TagList = ({ children }) => {
   return (
     <Box>
       {children &&
@@ -85,7 +81,7 @@ const Tags = () => {
           My Tags
         </Heading>
         <Spacer />
-        <Image src="/assets/settings.svg" />
+        <Image src="/assets/images/settings.svg" />
       </Flex>
       <Box maxH="50vh" overflowY="auto">
         <TagList>

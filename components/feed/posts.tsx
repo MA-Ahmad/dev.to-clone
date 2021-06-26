@@ -53,7 +53,7 @@ const HeaderBtn = styled(Button)`
 `;
 
 
-function Header({ isActive, setIsActive }) {
+const Header = ({ isActive, setIsActive }) => {
   return (
     <Box as="header">
       <HStack spacing=".6rem">
@@ -179,7 +179,7 @@ function Card({
   );
 }
 
-const fetcher = (...args) => fetch(...args).then(res => res.json());
+const fetcher = (url) => fetch(url).then(res => res.json());
 
 const timeperiods = ["Feed", "Week", "Month", "Year", "Infinity", "Latest"];
 function returnFetchUrl(isActive) {
@@ -200,7 +200,7 @@ const Posts = () => {
   if (!data)
     return (
       <Box>
-        <Header />
+        <Header isActive={isActive} setIsActive={setIsActive} />
         <SkeletonCards />
       </Box>
     );
