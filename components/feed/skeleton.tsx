@@ -2,7 +2,7 @@ import { Box, HStack, Skeleton, Stack } from "@chakra-ui/react";
 
 const SkeletonCards = () => {
   return (
-    <Stack spacing={3}>
+    <Stack spacing={3} mt="3">
       {[1, 2, 3, 4, 5, 6, 7, 8].map(id => {
         return (
           <Box
