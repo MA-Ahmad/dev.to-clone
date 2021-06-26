@@ -100,7 +100,7 @@ const News = () => {
         },
         { title: "Pair Programming with Jhey", category: "events", slug: "" }
       ].map(news => (
-        <ListBox title={news.title} category={news.category} />
+        <ListBox title={news.title} category={news.category} slug={news.slug} />
       ))}
     </Box>
   );
