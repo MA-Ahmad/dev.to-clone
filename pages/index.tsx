@@ -5,10 +5,12 @@ import Sidebar from "../components/layout/sidebar";
 import Container from "../components/layout/container";
 import Listing from "../components/listing";
 import Posts from "../components/feed/posts";
+import Meta from "../components/layout/meta";
 
 export default function Index() {
   return (
     <Fragment>
+      <Meta />
       <Navbar />
       <Box as="main" bg="#EEF0F1" id="page" mt="56px">
         <Container>
