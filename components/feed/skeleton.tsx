@@ -38,8 +38,26 @@ const SkeletonCards = () => {
                   <Stack spacing={2} mt={1} isInline alignItems="center">
                     <Skeleton height="14px" width="80%" />
                   </Stack>
-                  <HStack spacing={2} mt={8} isInline alignItems="center">
-                    <Skeleton height="12px" width="20%" rounded="full" my={1} />
+                  <HStack
+                    justify="space-between"
+                    isInline
+                    alignItems="center"
+                    mt={4}
+                  >
+                    <HStack spacing={2} width="50%">
+                      <Skeleton
+                        height="12px"
+                        width="40%"
+                        rounded="full"
+                        my={1}
+                      />
+                      <Skeleton
+                        height="12px"
+                        width="40%"
+                        rounded="full"
+                        my={1}
+                      />
+                    </HStack>
                     <Skeleton height="12px" width="20%" rounded="full" my={1} />
                   </HStack>
                 </Box>
