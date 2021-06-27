@@ -13,7 +13,6 @@ import {
   MenuItem,
   Text,
   Link,
-  useDisclosure,
   MenuDivider
 } from "@chakra-ui/react";
 import Container from "./container";
@@ -39,8 +38,6 @@ const IconButton = ({ children }: IconButtonProps) => {
 };
 
 const Navbar = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
   return (
     <Box
       py="2"
@@ -79,64 +76,51 @@ const Navbar = () => {
               <Image src="/assets/images/bell.svg" />
             </IconButton>
             <Menu isLazy>
-              {({ isOpen, onClose }) => (
-                <>
-                  <MenuButton
-                    as={Button}
-                    size="sm"
-                    px={0}
-                    py={0}
-                    rounded="full"
-                  >
-                    <Avatar
-                      size={"sm"}
-                      src={
-                        "https://avatars2.githubusercontent.com/u/37842853?v=4"
-                      }
-                    />
-                  </MenuButton>
-                  <MenuList
-                    zIndex={5}
-                    border="2px solid"
-                    borderColor="gray.700"
-                    boxShadow="4px 4px 0"
-                    boxColor="gray.700"
-                  >
-                    <Link
-                      href="https://dev.to/m_ahmad"
-                      _hover={{ textDecoration: "none" }}
-                      onClick={onClose}
-                      isExternal
-                    >
-                      <MenuItem>
-                        <VStack justify="start" alignItems="left">
-                          <Text fontWeight="500">Muhammad Ahmad</Text>
-                          <Text size="sm" color="gray.500" mt="0 !important">
-                            @m_ahmad
-                          </Text>
-                        </VStack>
-                      </MenuItem>
-                    </Link>
-                    <MenuDivider />
-                    <MenuItem>
-                      <Text fontWeight="500">Dashboard</Text>
-                    </MenuItem>
-                    <MenuItem>
-                      <Text fontWeight="500">Create Post</Text>
-                    </MenuItem>
-                    <MenuItem>
-                      <Text fontWeight="500">Reading List</Text>
-                    </MenuItem>
-                    <MenuItem>
-                      <Text fontWeight="500">Settings</Text>
-                    </MenuItem>
-                    <MenuDivider />
-                    <MenuItem>
-                      <Text fontWeight="500">Sign Out</Text>
-                    </MenuItem>
-                  </MenuList>
-                </>
-              )}
+              <MenuButton as={Button} size="sm" px={0} py={0} rounded="full">
+                <Avatar
+                  size={"sm"}
+                  src={"https://avatars2.githubusercontent.com/u/37842853?v=4"}
+                />
+              </MenuButton>
+              <MenuList
+                zIndex={5}
+                border="2px solid"
+                borderColor="gray.700"
+                boxShadow="4px 4px 0"
+                boxColor="gray.700"
+              >
+                <Link
+                  href="https://dev.to/m_ahmad"
+                  _hover={{ textDecoration: "none" }}
+                  isExternal
+                >
+                  <MenuItem>
+                    <VStack justify="start" alignItems="left">
+                      <Text fontWeight="500">Muhammad Ahmad</Text>
+                      <Text size="sm" color="gray.500" mt="0 !important">
+                        @m_ahmad
+                      </Text>
+                    </VStack>
+                  </MenuItem>
+                </Link>
+                <MenuDivider />
+                <MenuItem>
+                  <Text fontWeight="500">Dashboard</Text>
+                </MenuItem>
+                <MenuItem>
+                  <Text fontWeight="500">Create Post</Text>
+                </MenuItem>
+                <MenuItem>
+                  <Text fontWeight="500">Reading List</Text>
+                </MenuItem>
+                <MenuItem>
+                  <Text fontWeight="500">Settings</Text>
+                </MenuItem>
+                <MenuDivider />
+                <MenuItem>
+                  <Text fontWeight="500">Sign Out</Text>
+                </MenuItem>
+              </MenuList>
             </Menu>
           </HStack>
         </HStack>
