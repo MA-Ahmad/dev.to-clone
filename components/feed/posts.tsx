@@ -199,7 +199,7 @@ const Posts = () => {
   if (error) return <Box>failed to load</Box>;
   if (!data)
     return (
-      <Box>
+      <Box mb="8" borderRadius="md">
         <Header isActive={isActive} setIsActive={setIsActive} />
         <SkeletonCards />
       </Box>
