@@ -6,7 +6,7 @@
   <h2 align="center">Dev.to Clone</h2>
 
   <p align="center">
-    Built with React & Next.js.
+    Built with Typescript, React & Next.js
   </p>  
 </p>
 
@@ -16,7 +16,7 @@
 
 ## Overview
 
-This application is built using the following technologies:
+This application is built with the following technologies:
 
 - [Typescript](https://www.typescriptlang.org/)
 - [Nextjs](https://nextjs.org/)
