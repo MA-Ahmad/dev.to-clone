@@ -103,7 +103,11 @@ function Card({
       border="1px solid #08090a1a"
     >
       {headerImage ? <Image src={headerImage} /> : ''}
-      <Grid templateColumns="max-content 1fr" gap={2} p={4}>
+      <Grid
+        templateColumns={{ base: '1fr', sm: 'max-content 1fr' }}
+        gap={2}
+        p={4}
+      >
         <Image src={userProfile} w="8" borderRadius="full" />
 
         <Box>
@@ -144,7 +148,10 @@ function Card({
               borderRadius="4px"
               _hover={{ bg: '#f6f6f6' }}
             >
-              {reactionCount} reactions
+              {reactionCount}
+              <Box ml="2" as="span" d={{ base: 'none', sm: 'block' }}>
+                reactions
+              </Box>
             </Button>
             <Button
               leftIcon={<Image src="/assets/images/comment.svg" />}
@@ -157,7 +164,10 @@ function Card({
               borderRadius="4px"
               _hover={{ bg: '#f6f6f6' }}
             >
-              {commentCount} comments
+              {commentCount}
+              <Box ml="2" as="span" d={{ base: 'none', sm: 'block' }}>
+                comments
+              </Box>
             </Button>
             <Spacer />
             <Text fontSize="12px">{readingTime} min read</Text>
