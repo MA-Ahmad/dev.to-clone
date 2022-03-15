@@ -108,10 +108,34 @@ function Card({
         gap={2}
         p={4}
       >
-        <Image src={userProfile} w="8" borderRadius="full" />
+        {/* <Image src={userProfile} w="8" borderRadius="full" /> */}
 
+        <HStack d={{ base: 'flex', sm: 'block' }}>
+          <Image
+            alt="user profile"
+            src={userProfile}
+            w="8"
+            borderRadius="full"
+          />
+          <VStack
+            align="flex-start"
+            spacing={0}
+            d={{ base: 'flex', sm: 'none' }}
+          >
+            <Text color="#4d5760" fontSize="14px" fontWeight="500">
+              {username}
+            </Text>
+            <Text color="#4d5760" fontSize="12px">
+              {publishedDate}
+            </Text>
+          </VStack>
+        </HStack>
         <Box>
-          <VStack align="flex-start" spacing={0}>
+          <VStack
+            align="flex-start"
+            spacing={0}
+            d={{ base: 'none', sm: 'flex' }}
+          >
             <Text color="#4d5760" fontSize="14px" fontWeight="500">
               {username}
             </Text>
