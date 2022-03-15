@@ -8,13 +8,13 @@ import {
   Grid,
   Text,
   Link,
-  Image
-} from "@chakra-ui/react";
-import { css } from "@emotion/react";
-import styled from "@emotion/styled";
-import useSWR from "swr";
-import { useState } from "react";
-import SkeletonCards from "./skeleton";
+  Image,
+} from '@chakra-ui/react'
+import { css } from '@emotion/react'
+import styled from '@emotion/styled'
+import useSWR from 'swr'
+import { useState } from 'react'
+import SkeletonCards from './skeleton'
 
 const HeaderBtn = styled(Button)`
   position: relative;
@@ -33,7 +33,7 @@ const HeaderBtn = styled(Button)`
     box-shadow: none;
   }
 
-  ${props =>
+  ${(props) =>
     props.isCurrent &&
     css`
       font-weight: 500;
@@ -43,15 +43,14 @@ const HeaderBtn = styled(Button)`
         position: absolute;
         bottom: 0;
         margin: auto;
-        content: "";
+        content: '';
         height: 3px;
         width: 70%;
         border-radius: 4px;
         background-color: #3b49df;
       }
     `}
-`;
-
+`
 
 const Header = ({ isActive, setIsActive }) => {
   return (
@@ -69,17 +68,17 @@ const Header = ({ isActive, setIsActive }) => {
               >
                 {item}
               </HeaderBtn>
-            );
+            )
           }
           return (
             <HeaderBtn key={idx} onClick={() => setIsActive(item)}>
               {item}
             </HeaderBtn>
-          );
+          )
         })}
       </HStack>
     </Box>
-  );
+  )
 }
 
 function Card({
@@ -92,7 +91,7 @@ function Card({
   postLink,
   readingTime,
   reactionCount,
-  commentCount
+  commentCount,
 }) {
   return (
     <Box
@@ -103,7 +102,7 @@ function Card({
       overflow="hidden"
       border="1px solid #08090a1a"
     >
-      {headerImage ? <Image src={headerImage} /> : ""}
+      {headerImage ? <Image src={headerImage} /> : ''}
       <Grid templateColumns="max-content 1fr" gap={2} p={4}>
         <Image src={userProfile} w="8" borderRadius="full" />
 
@@ -116,10 +115,10 @@ function Card({
               {publishedDate}
             </Text>
           </VStack>
-          <Heading fontSize={headerImage ? "30px" : "24px"} mt="3">
+          <Heading fontSize={headerImage ? '30px' : '24px'} mt="3">
             <Link
               href={postLink}
-              _hover={{ color: "#323ebe", textDecoration: "none" }}
+              _hover={{ color: '#323ebe', textDecoration: 'none' }}
               isExternal
             >
               {title}
@@ -143,7 +142,7 @@ function Card({
               fontSize="14px"
               lineHeight="1.2"
               borderRadius="4px"
-              _hover={{ bg: "#f6f6f6" }}
+              _hover={{ bg: '#f6f6f6' }}
             >
               {reactionCount} reactions
             </Button>
@@ -156,7 +155,7 @@ function Card({
               fontSize="14px"
               lineHeight="1.2"
               borderRadius="4px"
-              _hover={{ bg: "#f6f6f6" }}
+              _hover={{ bg: '#f6f6f6' }}
             >
               {commentCount} comments
             </Button>
@@ -168,7 +167,7 @@ function Card({
               height="auto"
               fontWeight="normal"
               fontSize="14px"
-              _hover={{ bg: "#b5bdc4" }}
+              _hover={{ bg: '#b5bdc4' }}
             >
               Save
             </Button>
@@ -176,34 +175,34 @@ function Card({
         </Box>
       </Grid>
     </Box>
-  );
+  )
 }
 
-const fetcher = (url) => fetch(url).then(res => res.json());
+const fetcher = (url) => fetch(url).then((res) => res.json())
 
-const timeperiods = ["Feed", "Week", "Month", "Year", "Infinity", "Latest"];
+const timeperiods = ['Week', 'Month', 'Year', 'Latest']
 function returnFetchUrl(isActive) {
-  if (isActive === "Feed") {
-    return "";
+  if (isActive === 'Week') {
+    return ''
   }
-  return isActive.toLowerCase();
+  return isActive.toLowerCase()
 }
 
 const Posts = () => {
-  const [isActive, setIsActive] = useState(timeperiods[0]);
+  const [isActive, setIsActive] = useState(timeperiods[3])
   const { data, error } = useSWR(
     `https://dev.to/stories/feed/${returnFetchUrl(isActive)}?page=1`,
     fetcher
-  );
+  )
 
-  if (error) return <Box>failed to load</Box>;
+  if (error) return <Box>failed to load</Box>
   if (!data)
     return (
       <Box mb="8" borderRadius="md">
         <Header isActive={isActive} setIsActive={setIsActive} />
         <SkeletonCards />
       </Box>
-    );
+    )
 
   return (
     <Box mb="8" borderRadius="md">
@@ -220,11 +219,11 @@ const Posts = () => {
           postLink={`https://dev.to${post.path}`}
           publishedDate={post.readable_publish_date}
           userProfile={post.user.profile_image_url}
-          headerImage={idx === 0 ? post.main_image : ""}
+          headerImage={idx === 0 ? post.main_image : ''}
         />
       ))}
     </Box>
-  );
+  )
 }
 
-export default Posts;
+export default Posts
