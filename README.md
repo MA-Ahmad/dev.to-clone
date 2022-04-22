@@ -41,6 +41,9 @@ This application is built with the following technologies:
     ```
 The above command will start the application on [http://localhost:3000/](http://localhost:3000).
 
+## View components and Copy code of your favourite components
+[TemplatesKart website](https://templateskart.com/projects/devto-clone)
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
